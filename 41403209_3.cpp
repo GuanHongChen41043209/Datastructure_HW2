@@ -281,39 +281,30 @@ int main() {
     cout << "Vertices: " << g.NumberOfVertices() << endl;
     cout << "Edges: " << g.NumberOfEdges() << endl;
     g.PrintMultilist();
-
     cout << endl;
 
     cout << "Degree of vertex 0: " << g.Degree(0) << endl;
     cout << "Degree of vertex 1: " << g.Degree(1) << endl;
-
     cout << endl;
-
     cout << "Exists edge (0, 1): " << g.ExistsEdge(0, 1) << endl;
     cout << "Exists edge (3, 4): " << g.ExistsEdge(3, 4) << endl;
-
     cout << endl;
 
     g.DeleteEdge(0, 1);
-
     cout << "After deleting edge (0, 1):" << endl;
     cout << "Edges: " << g.NumberOfEdges() << endl;
     g.PrintMultilist();
-
     cout << endl;
 
     g.InsertVertex();
-
     cout << "After inserting one vertex:" << endl;
     cout << "Vertices: " << g.NumberOfVertices() << endl;
     cout << "Edges: " << g.NumberOfEdges() << endl;
     g.PrintMultilist();
-
     cout << endl;
 
-    g.DeleteVertex(2);
-
-    cout << "After deleting vertex 2:" << endl;
+    g.DeleteVertex(1);
+    cout << "After deleting vertex 1:" << endl;
     cout << "Vertices: " << g.NumberOfVertices() << endl;
     cout << "Edges: " << g.NumberOfEdges() << endl;
     g.PrintMultilist();

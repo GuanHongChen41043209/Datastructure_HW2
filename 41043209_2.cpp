@@ -130,25 +130,15 @@ public:
             cout << "Invalid vertex!" << endl;
             return;
         }
-
-        // 先扣掉跟 v 相連的邊數
         e -= adjList[v].size();
-
-        // 刪掉第 v 個 adjacency list
         adjList.erase(adjList.begin() + v);
         n--;
-
-        // 處理其他頂點的 adjacency list
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < adjList[i].size(); j++) {
-
-                // 如果有邊連到被刪掉的頂點 v，就刪掉
                 if (adjList[i][j].vertex == v) {
                     adjList[i].erase(adjList[i].begin() + j);
                     j--;
                 }
-
-                // 如果頂點編號比 v 大，刪除後要往前移一格
                 else if (adjList[i][j].vertex > v) {
                     adjList[i][j].vertex--;
                 }
@@ -177,38 +167,29 @@ int main() {
     cout << "Vertices: " << g.NumberOfVertices() << endl;
     cout << "Edges: " << g.NumberOfEdges() << endl;
     g.PrintList();
-
     cout << endl;
 
     cout << "Degree of vertex 0: " << g.Degree(0) << endl;
     cout << "Degree of vertex 1: " << g.Degree(1) << endl;
-
     cout << endl;
-
     cout << "Exists edge (0, 1): " << g.ExistsEdge(0, 1) << endl;
     cout << "Exists edge (3, 4): " << g.ExistsEdge(3, 4) << endl;
-
     cout << endl;
 
     g.DeleteEdge(0, 1);
-
     cout << "After deleting edge (0, 1):" << endl;
     cout << "Edges: " << g.NumberOfEdges() << endl;
     g.PrintList();
-
     cout << endl;
 
     g.InsertVertex();
-
     cout << "After inserting one vertex:" << endl;
     cout << "Vertices: " << g.NumberOfVertices() << endl;
     cout << "Edges: " << g.NumberOfEdges() << endl;
     g.PrintList();
-
     cout << endl;
 
     g.DeleteVertex(2);
-
     cout << "After deleting vertex 2:" << endl;
     cout << "Vertices: " << g.NumberOfVertices() << endl;
     cout << "Edges: " << g.NumberOfEdges() << endl;

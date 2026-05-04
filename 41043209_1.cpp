@@ -157,8 +157,8 @@ int main() {
     g.PrintMatrix();
     cout << endl;
 
-    g.DeleteVertex(2);
-    cout << "After deleting vertex 2:" << endl;
+    g.DeleteVertex(1);
+    cout << "After deleting vertex 1:" << endl;
     cout << "Vertices: " << g.NumberOfVertices() << endl;
     cout << "Edges: " << g.NumberOfEdges() << endl;
     g.PrintMatrix();
